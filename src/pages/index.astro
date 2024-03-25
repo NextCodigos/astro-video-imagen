@@ -1,0 +1,65 @@
+---
+
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <main id="hero">
+      <h1 style="text-align: center;">
+        Astro video con imagen encima con texto
+      </h1>
+      <p style="text-align: center;">Alojamiento en la nube y mucho mas</p>
+      <button type="button">Saber mas</button>
+      <video muted autoplay loop>
+        <source src="/video.mp4" type="video/mp4" />
+        <div class="capa"></div>
+      </video>
+    </main>
+  </body>
+</html>
+
+<style>
+  #hero {
+    min-height: 100vh;
+    position: relative;
+  }
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* se oculta texto encima video */
+    z-index: -1;
+  }
+  .capa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1c1c1d;
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+  }
+  button {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+	color: #000;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	font-size: 16px;
+  }
+</style>
